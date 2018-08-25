@@ -14,4 +14,4 @@ class Candidates {
 }
 
 // Singleton
-module.exports = new Candidates();
+module.exports = Candidates;
