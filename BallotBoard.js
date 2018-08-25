@@ -13,14 +13,8 @@ class BallotBoard {
   }
 
   allocateBallot(ballot) {
-    // Find first not elimiated pref
-    const notElimiatedPrefIdx = ballot.preferences.findIndex(pref => !this.eliminated.includes(pref));
-    // Found
-    if (notElimiatedPrefIdx >= 0) {
-      // Put ballot in the column
-      const col = ballot.preferences[notElimiatedPrefIdx];
-      this.ballotColumns[col].push(ballot);
-    }
+    const col = ballot.getTopPrefId();
+    (col >= 0) && this.ballotColumns[col].push(ballot);
     // Drop if not found
   }
 }
