@@ -13,6 +13,11 @@ class BallotPaper {
     return this;
   }
 
+  getTopPrefId() {
+    const idx = this.preferenceIds.findIndex(prefId => this.candidate.isNotEliminatedById(prefId));
+    return (idx >= 0) ? this.preferenceIds[idx] : -1;
+  }
+
   toString() {
     const prefCandidate = this.preferenceIds.map(prefId => this.candidate.getCandidateById(prefId));
     return prefCandidate.join(" > ");
