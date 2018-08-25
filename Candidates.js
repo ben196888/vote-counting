@@ -3,11 +3,15 @@ class Candidates {
     this.candidates = [];
   }
 
+  get count() {
+    return this.candidates.length;
+  }
+
   setCandidates(candidates) {
     this.candidates = candidates;
     return this;
   }
 }
 
-// Singleton method
+// Singleton
 module.exports = new Candidates();

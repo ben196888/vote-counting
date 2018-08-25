@@ -1,10 +1,12 @@
 const candidate = require('./Candidates');
 const BallotPaper = require('./BallotPaper');
+const BallotBoard = require('./BallotBoard');
 
 const candidates = ['Winery Tour', 'Ten Pin Bowling', 'Movie Night', 'Museum Visit'];
 
 candidate.setCandidates(candidates);
-ballotPaper = new BallotPaper(candidate);
+const ballotPaper = new BallotPaper(candidate);
+const ballotBoard = new BallotBoard(candidate);
 
 const pool = [];
 const votes = [
@@ -24,3 +26,5 @@ for(let i = 0; i < 8; i++) {
 }
 
 console.log(pool.map(p => p.toString()));
+
+pool.forEach(ballot => ballotBoard.allocateBallot(ballot));
