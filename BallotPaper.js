@@ -1,7 +1,7 @@
 class BallotPaper {
   constructor(candidate) {
     this.candidate = candidate;
-    this.preferences = [];
+    this.preferenceIds = [];
   }
 
   clone() {
@@ -9,12 +9,12 @@ class BallotPaper {
   }
 
   vote(preferences = []) {
-    this.preferences = preferences;
+    this.preferenceIds = preferences;
     return this;
   }
 
   toString() {
-    const prefCandidate = this.preferences.map(pref => this.candidate.candidates[pref]);
+    const prefCandidate = this.preferenceIds.map(prefId => this.candidate.getCandidateById(prefId));
     return prefCandidate.join(" > ");
   }
 }
