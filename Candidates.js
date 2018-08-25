@@ -1,6 +1,7 @@
 class Candidates {
   constructor() {
     this.candidates = [];
+    this.eliminatedIds = [];
   }
 
   get count() {
@@ -14,6 +15,14 @@ class Candidates {
   setCandidates(candidates) {
     this.candidates = candidates;
     return this;
+  }
+
+  isNotEliminatedById(candidateId) {
+    return !this.eliminatedIds.includes(candidateId);
+  }
+
+  eliminateCandidateById(candidateId) {
+    this.eliminatedIds.push(candidateId);
   }
 }
 
