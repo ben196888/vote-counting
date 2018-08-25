@@ -7,11 +7,14 @@ class Candidates {
     return this.candidates.length;
   }
 
+  getCandidateById(candidateId) {
+    return this.candidates[candidateId];
+  }
+
   setCandidates(candidates) {
     this.candidates = candidates;
     return this;
   }
 }
 
-// Singleton
 module.exports = Candidates;
