@@ -3,7 +3,6 @@ const voteCounting = require('./voteCounting').voteCounting;
 class BallotBoard {
   constructor (candidate) {
     this.candidate = candidate;
-    this.round = 0;
 
     const count = this.candidate.count;
     this.ballotColumns = new Array(count);
