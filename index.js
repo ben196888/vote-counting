@@ -1,11 +1,10 @@
-const Candidate = require('./Candidates');
+const Candidate = require('./Candidate');
 const BallotPaper = require('./BallotPaper');
 const BallotBoard = require('./BallotBoard');
 
 const candidates = ['Winery Tour', 'Ten Pin Bowling', 'Movie Night', 'Museum Visit'];
 
-const candidate = new Candidate();
-candidate.setCandidates(candidates);
+const candidate = new Candidate(candidates);
 const ballotPaper = new BallotPaper(candidate);
 const ballotBoard = new BallotBoard(candidate);
 

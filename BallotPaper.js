@@ -14,7 +14,7 @@ class BallotPaper {
   }
 
   getTopPrefId() {
-    const idx = this.preferenceIds.findIndex(prefId => this.candidate.isNotEliminatedById(prefId));
+    const idx = this.preferenceIds.findIndex(prefId => this.candidate.isNotEliminated(prefId));
     return (idx >= 0) ? this.preferenceIds[idx] : -1;
   }
 

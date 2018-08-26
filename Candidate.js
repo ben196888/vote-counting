@@ -1,6 +1,6 @@
-class Candidates {
-  constructor() {
-    this.candidates = [];
+class Candidate {
+  constructor(candidates) {
+    this.candidates = candidates;
     this.eliminatedIds = [];
   }
 
@@ -12,12 +12,7 @@ class Candidates {
     return this.candidates[candidateId];
   }
 
-  setCandidates(candidates) {
-    this.candidates = candidates;
-    return this;
-  }
-
-  isNotEliminatedById(candidateId) {
+  isNotEliminated(candidateId) {
     return !this.eliminatedIds.includes(candidateId);
   }
 
@@ -26,4 +21,4 @@ class Candidates {
   }
 }
 
-module.exports = Candidates;
+module.exports = Candidate;
