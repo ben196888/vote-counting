@@ -16,7 +16,7 @@ function nextRound(ballotBoard) {
   const candidate = ballotBoard.candidate;
   const ballotColumns = ballotBoard.ballotColumns;
   const notEliminatedCols = ballotColumns.filter((col, i) => candidate.isNotEliminatedId(i));
-  const nonExhaustedBallots = notEliminatedCols.reduce((sum, col) => { sum += col.length; return sum; }, 0);
+  const nonExhaustedBallots = notEliminatedCols.reduce((sum, col) => (sum + col.length), 0);
   const maxCandidate = ballotColumns.reduce((res, col, i) => {
     if (candidate.isNotEliminatedId(i) && col.length > res.max) {
       res.max = col.length;
