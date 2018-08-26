@@ -15,6 +15,15 @@ class BallotBoard {
     (col >= 0) && this.ballotColumns[col].push(ballot);
     // Drop if not found
   }
+
+  toString() {
+    const columnStringBuilder = this.ballotColumns.map((col, i) => {
+      const candidateTitle = this.candidate.getCandidateById(i);
+      return `candidate ${candidateTitle} got ${col.length} ballots, not eliminated: ${this.candidate.isNotEliminatedId(i)}`;
+    });
+
+    return columnStringBuilder.join('\n');
+  }
 }
 
 module.exports = BallotBoard;
