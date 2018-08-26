@@ -17,6 +17,7 @@ class Candidate {
   }
 
   eliminateCandidateById(candidateId) {
+    console.log(`candidate: ${candidateId} / ${this.getCandidateById(candidateId)} has been eliminated.`);
     this.eliminatedIds.push(candidateId);
   }
 }
