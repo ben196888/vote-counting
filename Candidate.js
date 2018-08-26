@@ -12,7 +12,7 @@ class Candidate {
     return this.candidates[candidateId];
   }
 
-  isNotEliminated(candidateId) {
+  isNotEliminatedId(candidateId) {
     return !this.eliminatedIds.includes(candidateId);
   }
 
