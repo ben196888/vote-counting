@@ -13,8 +13,7 @@ class BallotBoard {
 
   allocateBallot(ballot) {
     const col = ballot.getTopPrefId();
-    (col >= 0) && this.ballotColumns[col].push(ballot);
-    // Drop if not found
+    return Boolean((col >= 0) && this.ballotColumns[col].push(ballot));
   }
 
   getVoteResult() {
@@ -25,7 +24,8 @@ class BallotBoard {
   toString() {
     const columnStringBuilder = this.ballotColumns.map((col, i) => {
       const candidateTitle = this.candidate.getCandidateById(i);
-      return `candidate ${candidateTitle} got ${col.length} ballots, not eliminated: ${this.candidate.isNotEliminatedId(i)}`;
+      const eliminatedWord = this.candidate.isNotEliminatedId(i) ? 'not eliminated' : 'eliminated';
+      return `candidate ${candidateTitle} got ${col.length} ballots, ${eliminatedWord}`;
     });
 
     return columnStringBuilder.join('\n');

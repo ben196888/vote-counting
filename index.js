@@ -29,4 +29,4 @@ console.log(pool.map(p => p.toString()));
 
 pool.forEach(ballot => ballotBoard.allocateBallot(ballot));
 
-console.log(ballotBoard.getVoteResult());
+console.log(`${ballotBoard.getVoteResult()} is the winner`);

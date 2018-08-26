@@ -43,10 +43,13 @@ function nextRound(ballotBoard) {
 
   // Relocate the ballot in eliminated column
   const ballotsShouldBeRelocated = ballotColumns[minCandidate.id];
+  const ballotsRelocatedFailed = [];
   for (const ballot of ballotsShouldBeRelocated) {
     console.log(`Relocate ballot ${ballot.toString()}`);
-    ballotBoard.allocateBallot(ballot);
+    const relocateSuc = ballotBoard.allocateBallot(ballot);
+    relocateSuc || ballotsRelocatedFailed.push(relocateSuc);
   }
+  ballotColumns[minCandidate.id] = ballotsRelocatedFailed;
 
   // return means not found result yet
   return -1;
