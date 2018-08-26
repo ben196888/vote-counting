@@ -8,8 +8,6 @@ class BallotBoard {
     for(let i = 0; i < count; i++) {
       this.ballotColumns[i] = [];
     }
-
-    this.eliminated = [];
   }
 
   allocateBallot(ballot) {
