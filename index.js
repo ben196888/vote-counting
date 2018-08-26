@@ -28,3 +28,5 @@ for(let i = 0; i < 8; i++) {
 console.log(pool.map(p => p.toString()));
 
 pool.forEach(ballot => ballotBoard.allocateBallot(ballot));
+
+console.log(ballotBoard.getVoteResult());

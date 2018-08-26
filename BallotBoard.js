@@ -1,3 +1,5 @@
+const voteCounting = require('./voteCounting').voteCounting;
+
 class BallotBoard {
   constructor (candidate) {
     this.candidate = candidate;
@@ -14,6 +16,11 @@ class BallotBoard {
     const col = ballot.getTopPrefId();
     (col >= 0) && this.ballotColumns[col].push(ballot);
     // Drop if not found
+  }
+
+  getVoteResult() {
+    const candidateId = voteCounting(this);
+    return this.candidate.getCandidateById(candidateId);
   }
 
   toString() {
